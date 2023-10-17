@@ -2,7 +2,7 @@
 # lista, tupla ou conjunto). O algoritmo deverá armazenar em uma nova variável os
 # valores na ordem inversa e com o sinal inverso. Exemplo:
 
-N = 2
+N = 25
 Lista = []
 print("A lista original é:")
 for i in range(N):

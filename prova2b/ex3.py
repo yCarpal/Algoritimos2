@@ -3,7 +3,7 @@
 # ● a quantidade de valores pares armazenados em x.
 # ● e a média dos valores impares armazenados em x.
 
-N = 5
+N = 100
 tamanho = N
 x = []
 num_pares = 0
