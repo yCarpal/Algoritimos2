@@ -3,5 +3,12 @@
 # algoritmos!”.
 
 nome = input("Insira o seu nome : ")
+frase = "\n Eu amo algoritmos"
 
-with ("manipulacao/exercicios/nome.txt")
+with open("manipulacao/exercicios/nome.txt","w") as exercicio:
+    exercicio.write(nome)
+
+with open("manipulacao/exercicios/nome.txt", "a") as exercicio:
+    exercicio.write(frase)
+
+print(f"O Nome {nome}, e a Frase {frase} foi salvo no arquivo 'nome.txt'")
