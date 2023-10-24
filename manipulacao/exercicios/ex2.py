@@ -3,3 +3,5 @@
 # algoritmos!”.
 
 nome = input("Insira o seu nome : ")
+
+with ("manipulacao/exercicios/nome.txt")
