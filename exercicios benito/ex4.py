@@ -1,5 +1,6 @@
 inicio = 1
-final = 50
+final = 1000000
+lista = []
 
 for i in range(inicio, final + 1):
     if i > 1:
@@ -7,4 +8,6 @@ for i in range(inicio, final + 1):
             if (i % n) == 0:
                 break
         else:
-            print(i)
+            lista.append(i)
+                       
+print(len(lista))

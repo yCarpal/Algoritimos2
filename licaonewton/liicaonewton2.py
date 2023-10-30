@@ -12,7 +12,6 @@ def calcular_raiz_quadrada(n):
     
     return x
 
-# Exemplo de uso
 numero = float(input("Insira um número para calcular a raiz: "))  # Número para calcular a raiz quadrada
 raiz_quadrada = calcular_raiz_quadrada(numero)
 print(f"A raiz quadrada de {numero} é aproximadamente {raiz_quadrada:.10f}")
