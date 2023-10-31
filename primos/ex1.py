@@ -1,18 +1,18 @@
-val_a = 1
-val_b = int(input("Insira um valor para que seja calculada a raiz quadrada"))
-interacoes = 3
+A = float(input("Informe o valor para A:"))
+B = float(input("Informe o valor para B:"))
 
-def media_harmonica(val_b):
-    for in range(interacoes):
-        mediah = 2 * (val_a * val_b)/val_a + val_b
+Med_HAR = 0
+Med_ari = 0
+Med_geo = 0
 
+count = 0
 
-    return mediah
+while count <= 3:
+    Med_HAR = (2*A*B)/(A+B)
+    Med_ari = (A+B)/2
+    A = Med_HAR
+    B = Med_ari
+    Med_geo = (A*B)**0,5
+    count += 1
 
-def media_aritmetica(val_b):
-    for in range(interacoes):
-        media_a = (val_a + val_b)/2
-
-
-    return  media_a
-## Encontrar a media geométrica
+print(F"A média harmonica é {Med_HAR}, a média geométrica é {Med_geo} e a média aritmética é {Med_ari}")
