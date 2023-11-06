@@ -1,5 +1,5 @@
 inicio = 1
-final = 1000000
+final = 10000
 lista = []
 
 for i in range(inicio, final + 1):

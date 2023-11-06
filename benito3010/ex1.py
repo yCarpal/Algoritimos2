@@ -1,4 +1,4 @@
-A = float(input("Informe o valor para A:"))
+A = 1
 B = float(input("Informe o valor para B:"))
 
 Med_HAR = 0
