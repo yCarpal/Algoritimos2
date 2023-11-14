@@ -36,7 +36,7 @@ while True:
             print('Número de distrito não está no arquivo')
         else:
             contador = contar_orgaos_do_distrito(distrito)
-            print(f'Total de órgãos no Distrito {distrito}: {contador}')
+            print(f'O Número total de órgãos no Distrito {distrito} é de {contador}')
     elif opcao == "2":
         distrito = input('Digite o número do distrito (de 1 a 9) para listar os órgãos do aquaviário: ')
         if distrito not in map(str, range(1, 10)):
