@@ -65,7 +65,7 @@ while True:
         total_estados = contar_estados_no_arquivo()
         print(f"Quantidade de estados no arquivo: {total_estados}")
     elif opcao == "4":
-        print("Saindo do programa.")
+        print("Saindo do programa.INTÉ ")
         break
     else:
         print("Opção inválida. Por favor, escolha uma opção válida.")

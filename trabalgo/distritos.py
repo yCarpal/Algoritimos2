@@ -24,10 +24,10 @@ def listar_orgaos_do_distrito(distrito):
 
 # Código principal
 while True:
-    Traco("Menu de Opções:")
+    Traco("Menu de opções:")
     Traco("1. Contar órgãos do distrito")
     Traco("2. Listar órgãos do distrito")
-    Traco("3. Sair")
+    Traco("3. Sair do Sistema")
     opcao = input("Escolha uma opção: ")
 
     if opcao == "1": 
@@ -44,7 +44,7 @@ while True:
         else:
             listar_orgaos_do_distrito(distrito)
     elif opcao == "3":
-        print("Saindo do programa.")
+        print("Saindo do programa,tenha uma bom dia!!")
         break
     else:
         print("Opção inválida. Por favor, escolha uma opção válida.")
