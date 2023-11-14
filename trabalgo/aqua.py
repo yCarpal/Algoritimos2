@@ -1,15 +1,27 @@
-def filtrar_distritos(aqua):
-    aqua = open('trabalgo/aquaviarios.csv', 'r')  # Abra o arquivo 'trabalho/aquaviarios.csv'
+def contar_orgaos_do_distrito(distrito):
+    contador = 0
+    with open("trabalgo/aquaviario.csv", "r") as arquivo:
+        linhas = arquivo.readlines()
+        for i in linhas[1:]:  # Ignora o cabeçalho (primeira linha)
+            campos = i.strip().split(',')
+            if campos[0] == distrito:
+                contador += 1
+    return contador
 
-    with open(aqua, 'r') as trabalgo:
-        dados = trabalgo.readlines()
+def listar_orgaos_do_distrito(distrito):
+    with open("trabalgo/aquaviario.csv", "r") as arquivo:
+        linhas = arquivo.readlines()
+        for i in linhas[1:]:  # Ignora o cabeçalho (primeira linha)
+            campos = i.strip().split(',')
+            if campos[0] == distrito:
+                print(f'Distrito {distrito}: {campos[1]}, {campos[2]}')
 
-    # Crie um filtro para obter apenas os distritos de 1 a 9
-    distritos_filtrados = [distrito.strip() for distrito in dados if 1 <= int(distrito.split(',')[0]) <= 9]
+# Código principal
+# Lendo o número do distrito do usuário
+distrito = input('Digite o número do distrito (de 1 a 9) para listar os órgãos do aquaviário: ')
 
-    # Itere sobre os distritos filtrados e imprima seus respectivos órgãos
-    for distrito in distritos_filtrados:
-        codigo, orgao = distrito.split(',')
-        print(f"Distrito {codigo}: {orgao}")
-
-filtrar_distritos('aquaviario.txt')
+# Verificando se o número do distrito é válido
+if distrito not in map(str, range(1, 10)): # map ele é usado para criar um iterável com os números de 1 a 9 como strings e, em seguida, verifica se o valor inserido pelo usuário está contido nesse iterável.
+    print('Número de distrito inválido')
+else:
+    listar_orgaos_do_distrito(distrito)
