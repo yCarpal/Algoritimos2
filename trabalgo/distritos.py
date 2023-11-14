@@ -1,3 +1,9 @@
+def Traco(txt):
+    print('-'*30)
+    print(txt)
+    print('-'*30)
+    
+
 def contar_orgaos_do_distrito(distrito):
     contador = 0
     with open("trabalgo/aquaviario.csv", "r") as arquivo:
@@ -14,14 +20,14 @@ def listar_orgaos_do_distrito(distrito):
         for i in linhas[1:]:  # Ignora a primeira linha  # em cada i nas linhas do arquivo ele vai 
             campos = i.strip().split(',') # remove os espaços vazios e separa por virgula
             if campos[0] == distrito: # se a coluna 0 for igual ao distrito selecionado
-                print(f'Distrito {distrito}: {campos[1]}, {campos[2]}') # ira mostrar no terminal
+                print(f"O Distrito {distrito} possui o orgão {campos[1]}, na região de {campos[2]}") # ira mostrar no terminal
 
 # Código principal
 while True:
-    print("Menu de Opções:")
-    print("1. Contar órgãos do distrito")
-    print("2. Listar órgãos do distrito")
-    print("3. Sair")
+    Traco("Menu de Opções:")
+    Traco("1. Contar órgãos do distrito")
+    Traco("2. Listar órgãos do distrito")
+    Traco("3. Sair")
     opcao = input("Escolha uma opção: ")
 
     if opcao == "1": 

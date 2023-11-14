@@ -1,3 +1,9 @@
+def Traco(txt):
+    print('-'*30)
+    print(txt)
+    print('-'*30)
+    
+
 def filtrar_orgaos_por_estado(estado):
     contador = 0
     with open("trabalgo/aquaviario.csv", "r") as estados:
@@ -32,17 +38,17 @@ def contar_estados_no_arquivo():
 
     return len(estados_distintos)
 
-def menu():
-    print("Menu de Opções:")
-    print("1. Contar órgãos por estado")
-    print("2. Listar órgãos por estado")
-    print("3. Contar quantidade de estados")
-    print("4. Sair")
 
 arquivo_aquaviarios = "aquaviario.csv"
 
 while True:
-    menu()
+    Traco("Menu de Opções:")
+    Traco("1. Contar órgãos por estado")
+    Traco("2. Listar órgãos por estado")
+    Traco("3. Contar quantidade de estados")
+    Traco("4. Sair")
+
+
     opcao = input("Escolha uma opção: ")
 
     if opcao == "1":

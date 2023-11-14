@@ -1,3 +1,9 @@
+def Traco(txt):
+    print('-'*30)
+    print(txt)
+    print('-'*30)
+    
+
 def filtrar_e_contar_orgaos_por_estado(arquivo):
     orgaos_por_estado = {}  # Dicionário para armazenar órgãos por estado
 
@@ -24,9 +30,9 @@ def filtrar_e_contar_orgaos_por_estado(arquivo):
             print(f"  {orgao}")
 
 def menu():
-    print("Menu de Opções:")
-    print("1. Filtrar e contar órgãos por estado")
-    print("2. Sair")
+    Traco("Menu de Opções:")
+    Traco("1. Filtrar e contar órgãos por estado")
+    Traco("2. Sair")
 
 arquivo_aquaviarios = "aquaviario.csv"
 
