@@ -6,8 +6,8 @@ def Traco(txt):
 
 def contar_orgaos_do_distrito(distrito):
     contador = 0
-    with open("trabalgo/aquaviario.csv", "r") as arquivo:
-        linhas = arquivo.readlines()
+    with open("trabalgo/aquaviario.csv", "r") as distritos:
+        linhas = distritos.readlines()
         for i in linhas[1:]:  # Ignora a primeira linha
             campos = i.strip().split(',') # remove os espaços vazios e separa por virgula
             if campos[0] == distrito: # se a coluna 0 for igual ao distrito selecionado
@@ -15,8 +15,8 @@ def contar_orgaos_do_distrito(distrito):
     return contador
 
 def listar_orgaos_do_distrito(distrito):
-    with open("trabalgo/aquaviario.csv", "r") as arquivo:
-        linhas = arquivo.readlines() # ler o arquivo criando a variavel linhas
+    with open("trabalgo/aquaviario.csv", "r") as distritos:
+        linhas = distritos.readlines() # ler o arquivo criando a variavel linhas
         for i in linhas[1:]:  # Ignora a primeira linha  # em cada i nas linhas do arquivo ele vai 
             campos = i.strip().split(',') # remove os espaços vazios e separa por virgula
             if campos[0] == distrito: # se a coluna 0 for igual ao distrito selecionado
