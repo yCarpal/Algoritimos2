@@ -1,3 +1,4 @@
+
 def Traco(txt):
     print('-'*30)
     print(txt)
@@ -25,41 +26,33 @@ def mostrar_categorias():
     # Mostra os valores únicos da coluna
     for valor in valores_unicos:
         print(valor)
-
-    
-def listar_orgaos_por_categoria(categoria):
-    categoriass = []
-    with open("trabalgo/aquaviario.csv", "r") as categorias:
-        linhas = categorias.readlines()
+def contar_pessoas_por_cargo(cargo):
+    contador = 0
+    with open("trabalgo/aquaviario.csv", "r") as cargos:
+        linhas = cargos.readlines()
         for i in linhas[1:]:
             campos = i.strip().split(',')
-            if campos[4] == categoria:
-                categoriass.append(campos[3])  # Adicione o órgão à lista
-    return categoriass
+            if campos[1] == cargo:
+                contador += 1
+    return contador
 
 while True:
     Traco("Menu de Opções:")
-    Traco("1. Listar órgãos por categoria")
-    Traco("2. Sair do sistema")
+    Traco("1. Mostrar quantidade de pessoas por cargo")  
+    Traco("2. Sair")
 
     opcao = input("Escolha uma opção: ")
+
     if opcao == "1":
         mostrar_categorias()
-        cat = input("Digite a categoria: \n")
-        cats = listar_orgaos_por_categoria(cat)
-        print(f"Órgãos na categoria {cat}:\n")
-        for i in cats:
-            print(i)
-
-        # Salva os prints no arquivo "cargos.txt"
-        with open("cargos.txt", "w") as arquivo:
-            arquivo.write(f"Órgãos na categoria {cat}:\n")
-            for i in cats:
-                arquivo.write(i + "\n")
-                
-        print("Os dados foram salvos no arquivo cargos.txt.")
+        cargo = input("Digite o cargo: ")
+        total_pessoas = contar_pessoas_por_cargo(cargo)
+        print(f"Quantidade de pessoas que atuam no cargo '{cargo}': {total_pessoas}")
     elif opcao == "2":
         print("Saindo do programa. Até logo!")
         break
     else:
         print("Opção inválida. Por favor, escolha uma opção válida.")
+
+
+
