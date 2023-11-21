@@ -3,7 +3,7 @@ def Traco(txt):
     print(txt)
     print('-'*30)
 
-def salvar_em_arquivo(nome_arquivo, conteudo):
+def relatorio(nome_arquivo, conteudo):
     with open(nome_arquivo, "a") as arquivo:
         arquivo.write(conteudo)
 
@@ -16,7 +16,7 @@ def contar_orgaos_do_distrito(distrito):
             if campos[0] == distrito:
                 contador += 1
     resultado = f'O Número total de órgãos no Distrito {distrito} é de {contador}\n'
-    salvar_em_arquivo("distritos.txt", resultado)
+    relatorio("distritos.txt", resultado)
     return contador
 
 def listar_orgaos_do_distrito(distrito):
@@ -26,7 +26,7 @@ def listar_orgaos_do_distrito(distrito):
             campos = i.strip().split(',')
             if campos[0] == distrito:
                 resultado = f'O Distrito {distrito} possui o orgão {campos[1]}, na região de {campos[2]}\n'
-                salvar_em_arquivo("distritos.txt", resultado)
+                relatorio("distritos.txt", resultado)
                 print(resultado)
 
 # Código principal

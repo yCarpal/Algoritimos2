@@ -4,19 +4,19 @@ def Traco(txt):
     print('-'*30)
 
 def mostrar_categorias():
-    # Nome do arquivo CSV
-    nome_arquivo = 'trabalgo/aquaviario.csv'
     
-    # Lista para armazenar os valores únicos da coluna desejada
+    nome_arquivo = 'trabalgo/aquaviario.csv' # Nome do arquivo CSV
+    
+    # Lista para armazenar os valores únicos da coluna escolhida
     valores_unicos = []
 
-    # Lê o arquivo CSV e extrai os valores únicos da coluna desejada
+    # Lê o arquivo CSV e extrai os valores únicos da coluna escolhida
     with open(nome_arquivo, 'r') as arquivo_csv:
         linhas = arquivo_csv.readlines()
         
         # Encontra o índice da coluna
         cabecalho = linhas[0].strip().split(',')
-        indice_coluna = cabecalho.index("DS_CATEGORIA_POR")
+        indice_coluna = cabecalho.index("DS_CATEGORIA_POR") # pega o indice da coluna
 
         # Percorre as linhas do arquivo, adicionando os valores únicos ao conjunto
         for linha in linhas[1:]:
@@ -32,7 +32,7 @@ def listar_orgaos_por_categoria(categoria):
     with open("trabalgo/aquaviario.csv", "r") as categorias:
         linhas = categorias.readlines()
         for i in linhas[1:]:
-            campos = i.strip().split(',')
+            campos = i.strip().split(',') #
             if campos[4] == categoria:
                 categoriass.append(campos[3])  # Adicione o órgão à lista
     return categoriass
