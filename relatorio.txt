@@ -1,0 +1,3 @@
+Relatório do Arquivo: trabalgo/aquaviario.csv
+Número de Linhas: 1935
+Nomes das Colunas: distr, ds_abreviatura_orgao, CD_UF_ORGAO, ds_orgao, CD_CATEGORIA, DS_CATEGORIA_POR, CD_NIVEL, quantidade

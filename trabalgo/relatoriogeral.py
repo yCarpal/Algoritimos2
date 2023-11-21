@@ -1,57 +1,24 @@
-def Traco(txt):
-    print('-'*30)
-    print(txt)
-    print('-'*30)
+def relatorio_dados(nome_arquivo):
+    try:
+        with open(nome_arquivo, 'r') as arquivo_entrada:
+            linhas = arquivo_entrada.readlines()
 
-def relatorio(nome_arquivo, conteudo):
-    with open(nome_arquivo, "a") as arquivo:
-        arquivo.write(conteudo)
+            if len(linhas) > 0:
+                nomes_colunas = linhas[0].strip().split(',')
 
-def contar_orgaos_do_distrito(distrito):
-    contador = 0
-    with open("trabalgo/aquaviario.csv", "r") as distritos:
-        linhas = distritos.readlines()
-        for i in linhas[1:]:
-            campos = i.strip().split(',')
-            if campos[0] == distrito:
-                contador += 1
-    resultado = f'O Número total de órgãos no Distrito {distrito} é de {contador}\n'
-    relatorio("distritos.txt", resultado)
-    return contador
+                with open("relatorio.txt", 'w') as arquivo_relatorio:
+                    arquivo_relatorio.write(
+                        f"Relatório do Arquivo: {nome_arquivo}\n"
+                        f"Número de Linhas: {len(linhas)}\n"
+                        f"Nomes das Colunas: {', '.join(nomes_colunas)}\n"
+                    )
 
-def listar_orgaos_do_distrito(distrito):
-    with open("trabalgo/aquaviario.csv", "r") as distritos:
-        linhas = distritos.readlines()
-        for i in linhas[1:]:
-            campos = i.strip().split(',')
-            if campos[0] == distrito:
-                resultado = f'O Distrito {distrito} possui o orgão {campos[1]}, na região de {campos[2]}\n'
-                relatorio("distritos.txt", resultado)
-                print(resultado)
+                print("Relatório gerado com sucesso. Consulte o arquivo 'relatorio.txt'.")
+            else:
+                print(f"Erro: O arquivo '{nome_arquivo}' está vazio.")
 
-# Código principal
-while True:
-    Traco("Menu de opções:")
-    Traco("1. Contar órgãos do distrito")
-    Traco("2. Listar órgãos do distrito")
-    Traco("3. Sair do Sistema")
-    opcao = input("Escolha uma opção: ")
+    except FileNotFoundError:
+        print(f"Erro: Arquivo '{nome_arquivo}' não encontrado.")
 
-    if opcao == "1":
-        distrito = input('Digite o número do distrito (de 1 a 9) para contar os órgãos do aquaviário: ')
-        if distrito not in map(str, range(1, 10)):
-            print('Número de distrito não está no arquivo')
-        else:
-            contador = contar_orgaos_do_distrito(distrito)
-            print(f'O Número total de órgãos no Distrito {distrito} é de {contador}')
-    elif opcao == "2":
-        distrito = input('Digite o número do distrito (de 1 a 9) para listar os órgãos do aquaviário: ')
-        if distrito not in map(str, range(1, 10)):
-            print('Número de distrito não está no arquivo')
-        else:
-            listar_orgaos_do_distrito(distrito)
-    elif opcao == "3":
-        print("Saindo do programa, tenha um bom dia!!")
-        break
-    else:
-        print("Opção inválida. Por favor, escolha uma opção válida.")
+# Substitua 'nome_do_arquivo.csv' pelo nome do seu arquivo de dados
+relatorio_dados('trabalgo/aquaviario.csv')
